@@ -92,3 +92,5 @@ A user interface (UI) will be added in the future to improve usability — eithe
 
 🙌 Acknowledgements
 Created with ❤️ using Python and MySQL.
+
+_Future plans: A user-friendly UI will be added soon using Tkinter or Flask._
