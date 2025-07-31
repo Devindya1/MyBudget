@@ -73,7 +73,7 @@ def main():
         elif choice == '4':
             view_summary()
         elif choice == '5':
-            print("Exiting Mybudget. Goodbye!")
+            print("Exiting Mybudget. Goodbye! Have a nice day!")
             break    
         else:
             print("Invalid option. Please try again.")
