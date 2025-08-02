@@ -68,4 +68,11 @@ def delete_category(category_id):
     conn.commit()
     cursor.close()
     conn.close()
-     
+
+def delete_expenses_by_category(category_id):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM expense WHERE category_id = %s", (category_id,))
+    conn.commit()
+    cursor.close()
+    conn.close()

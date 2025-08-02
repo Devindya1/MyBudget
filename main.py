@@ -65,7 +65,7 @@ def delete_category():
     if not categories:
         print("No categories available to delete.")
         return 
-    print("nCategories:")
+    print("\nCategories:")
     for cat_id, cat_name in categories:
         print(f"{cat_id}. {cat_name}")
         print("Enter the ID of the category you want to delete:")
@@ -75,6 +75,7 @@ def delete_category():
         if category_id not in [cat[0] for cat in categories]:
             print("Invalid category ID. Please try again.")
             return
+        db.delete_expenses_by_category(category_id)
         db.delete_category(category_id)
         print(f"Category with ID {category_id} deleted successfully.")
     except ValueError:
