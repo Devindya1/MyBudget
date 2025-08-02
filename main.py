@@ -7,7 +7,8 @@ def show_menu():
     print("2. Add expense")
     print("3. Show expenses")
     print("4. Show summery by category")
-    print("5. Exit")
+    print("5. Delete category")
+    print("6. Exit")
 
 def add_category():
     name = input("Enter new category name: ").strip()
@@ -59,6 +60,29 @@ def view_summary():
     for cat_name, total in summary:
         print(f"Category: {cat_name}, Total: RS.{total:.2f}")
 
+def delete_category():
+    categories = db.get_categories()
+    if not categories:
+        print("No categories available to delete.")
+        return 
+    print("nCategories:")
+    for cat_id, cat_name in categories:
+        print(f"{cat_id}. {cat_name}")
+        print("Enter the ID of the category you want to delete:")
+        print("Note: Deleting a category will also delete all associated expenses.")
+    try:
+        category_id = int(input("Enter Category ID to delete: "))
+        if category_id not in [cat[0] for cat in categories]:
+            print("Invalid category ID. Please try again.")
+            return
+        db.delete_category(category_id)
+        print(f"Category with ID {category_id} deleted successfully.")
+    except ValueError:
+        print("Invalid input. Please enter a valid category ID.")
+    except Exception as e:
+        print(f"Error: {e}")
+            
+
 
 def main():
     while True:
@@ -73,6 +97,8 @@ def main():
         elif choice == '4':
             view_summary()
         elif choice == '5':
+            delete_category()
+        elif choice == '6':
             print("Exiting Mybudget. Goodbye! Have a nice day!")
             break    
         else:

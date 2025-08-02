@@ -60,3 +60,12 @@ def get_summary():
     cursor.close()
     conn.close()
     return summary
+
+def delete_category(category_id):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM category WHERE category_id = %s", (category_id,))
+    conn.commit()
+    cursor.close()
+    conn.close()
+     
