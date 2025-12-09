@@ -89,6 +89,8 @@ config = {
 
 A user interface (UI) will be added in the future to improve usability — either as a simple desktop GUI using Tkinter or a web-based interface using Flask.
 
+Thank you
+
 
 🙌 Acknowledgements
 Created with ❤️ using Python and MySQL.
