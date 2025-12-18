@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 My Budget Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Budget Manager</h1>
+        <nav id="main-nav">
+            <button onclick="showView('menu-view')">Home</button>
+            <button onclick="showView('add-category-view')">Add Category</button>
+            <button onclick="showView('add-expense-view')">Add Expense</button>
+            <button onclick="showView('show-expenses-view')">Show Expenses</button>
+            <button onclick="showView('show-summary-view')">Summary</button>
+            <button onclick="showView('delete-category-view')">Delete Category</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="menu-view" class="view active">
+            <h2>Welcome to My Budget</h2>
+            <p>Use the navigation above to manage your categories and expenses.</p>
+        </section>
+
+        <section id="add-category-view" class="view hidden">
+            <h2>➕ Add New Category</h2>
+            <form id="addCategoryForm">
+                <label for="categoryName">Category Name:</label>
+                <input type="text" id="categoryName" name="categoryName" required>
+                <button type="submit">Add Category</button>
+                <p id="addCategoryMessage" class="message"></p>
+            </form>
+        </section>
+
+        <section id="add-expense-view" class="view hidden">
+            <h2>💸 Add New Expense</h2>
+            <form id="addExpenseForm">
+                <label for="expenseCategory">Category:</label>
+                <select id="expenseCategory" name="category_id" required>
+                    </select>
+                
+                <label for="expenseDescription">Description:</label>
+                <input type="text" id="expenseDescription" name="description" required>
+
+                <label for="expenseAmount">Amount (RS):</label>
+                <input type="number" id="expenseAmount" name="amount" step="0.01" required>
+                
+                <label for="expenseDate">Date:</label>
+                <input type="date" id="expenseDate" name="expense_date">
+
+                <button type="submit">Add Expense</button>
+                <p id="addExpenseMessage" class="message"></p>
+            </form>
+        </section>
+
+        <section id="show-expenses-view" class="view hidden">
+            <h2>🗓️ All Expenses</h2>
+            <table id="expensesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount (RS)</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <p id="expensesMessage" class="message"></p>
+        </section>
+        
+        <section id="show-summary-view" class="view hidden">
+            <h2>📊 Summary by Category</h2>
+            <table id="summaryTable">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Total Spent (RS)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <p id="summaryMessage" class="message"></p>
+        </section>
+
+        <section id="delete-category-view" class="view hidden">
+            <h2>🗑️ Delete Category</h2>
+            <form id="deleteCategoryForm">
+                <label for="deleteCategoryId">Select Category to Delete:</label>
+                <select id="deleteCategoryId" name="category_id" required>
+                    </select>
+                <p class="warning-note">⚠️ Note: Deleting a category will also delete all associated expenses.</p>
+                <button type="submit" class="delete-button">Delete Category</button>
+                <p id="deleteCategoryMessage" class="message"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
