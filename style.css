@@ -1,0 +1,187 @@
+/* --- Color Palette --- */
+:root {
+    --color-navy: #1a233b;      /* Base Dark Background */
+    --color-dark-surface: #2c3e50; /* Slightly Lighter Surface (Cards, Tables) */
+    --color-gold: #ffc107;      /* Accent/Highlight */
+    --color-green: #2ecc71;     /* Success/Primary Action */
+    --color-red: #e74c3c;       /* Danger/Delete */
+    --color-white: #ffffff;
+    --color-light-text: #ecf0f1; /* White/Light Gray Text */
+    --color-input-bg: #34495e;  /* Darker input background */
+}
+
+/* --- Base Body and Typography --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-navy);
+    color: var(--color-light-text);
+    line-height: 1.6;
+}
+
+/* --- Header and Navigation --- */
+header {
+    background-color: var(--color-dark-surface);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    color: var(--color-gold);
+    margin-bottom: 15px;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+#main-nav button {
+    background-color: transparent;
+    color: var(--color-light-text);
+    border: 1px solid var(--color-light-text);
+    padding: 10px 18px;
+    margin: 0 8px;
+    cursor: pointer;
+    border-radius: 20px; /* Pill shape for modern look */
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#main-nav button:hover {
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* --- Main Content Area --- */
+main {
+    padding: 30px;
+    max-width: 950px;
+    margin: 30px auto;
+    background-color: var(--color-dark-surface);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    border-top: 3px solid var(--color-gold); /* Subtle gold top border */
+}
+
+.view h2 {
+    color: var(--color-green);
+    border-bottom: 2px solid var(--color-navy);
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Forms and Inputs --- */
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: var(--color-light-text);
+}
+
+form input[type="text"], 
+form input[type="number"], 
+form input[type="date"],
+form select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-navy);
+    border-radius: 8px;
+    background-color: var(--color-input-bg);
+    color: var(--color-light-text);
+    box-sizing: border-box;
+}
+
+/* Highlight for focus */
+form input:focus, form select:focus {
+    border-color: var(--color-gold);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3);
+}
+
+/* Submit Buttons */
+form button[type="submit"] {
+    background-color: var(--color-green);
+    color: var(--color-navy); /* Dark text on green for contrast */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #27ae60;
+    transform: scale(1.02);
+}
+
+.delete-button {
+    background-color: var(--color-red) !important; 
+    color: var(--color-white) !important;
+}
+.delete-button:hover {
+    background-color: #c0392b !important;
+}
+
+/* --- Tables (Expenses and Summary) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #34495e; /* Slightly lighter surface for table content */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures border-radius is applied to children */
+}
+
+th, td {
+    border: 1px solid var(--color-navy);
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-navy); /* Darkest part for table header */
+    color: var(--color-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Zebra striping for readability */
+tr:nth-child(even) {
+    background-color: #3f546c;
+}
+
+tr:hover {
+    background-color: #4a627d; /* Highlight row on hover */
+}
+
+/* --- Messages and Notes --- */
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: var(--color-white); /* Ensures text is visible */
+    background-color: rgba(46, 204, 113, 0.2); /* Light green background for success messages */
+}
+
+.warning-note {
+    color: var(--color-red);
+    padding: 10px 0;
+    font-style: italic;
+    border-left: 3px solid var(--color-red);
+    padding-left: 10px;
+    margin-top: 15px;
+}
