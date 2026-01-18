@@ -1,36 +1,62 @@
 # 💰 MyBudget – Expense Tracker
 
-MyBudget is a simple command-line-based expense tracking system built with Python and MySQL. It allows users to manage expense categories, add expenses, and view summaries grouped by category.
+MyBudget is a full-stack expense tracking application developed as a solo project. It allows users to manage expense categories, record expenses, and view summaries grouped by category. The project is designed to demonstrate practical backend and frontend development skills using modern web technologies.
+
+The application is being built with a React + Vite frontend and a Node.js + Express backend, using MySQL for persistent data storage.
 
 ---
 
 ## 🚀 Features
 
 - Add and manage expense categories
-- Add new expenses linked to categories
-- View all expenses in descending order by date
-- View total expenses by category
-- Clean and modular Python code
-- Uses MySQL for data storage
+- Add expenses linked to categories
+- View all expenses
+- View total expenses grouped by category
+- RESTful API architecture
+- Clean and modular backend structure
+- Scalable full-stack design
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Language:** Python 3.x
-- **Database:** MySQL
-- **Library:** `mysql-connector-python`
+**Frontend**
+- React
+- Vite
+- JavaScript
 
+**Backend**
+- Node.js
+- Express.js
+- MySQL
+
+**Database**
+- MySQL
+  
 ---
 
 ## 📦 Folder Structure
 
-Mybudget
-├── MyBudget.sql # MySQL script file
-├── config.py # MySQL connection config
-├── db.py # Database interaction logic
-├── main.py # Command-line interface
-└── README.md # This file
+my-budget/
+├── backend/
+│   ├── app.js
+│   ├── server.js
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/
+│   ├── routes/
+│   ├── middleware/
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   └── (React + Vite source files)
+│
+├── database/
+│   └── schema.sql
+│
+└── README.md
+
 
 
 ---
